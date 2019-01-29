@@ -1,0 +1,53 @@
+
+<ion-content>
+      <ion-back-button  text="{{category.name}}" default-href="/home"></ion-back-button>
+ <ion-row class="headerImgRow">
+     <ion-img class="headerImg" src="{{category.category_img}}"></ion-img>
+ </ion-row>
+
+ <ion-grid class="tabsButton">
+    <ion-row>
+        <ion-col class="selected" size="6">
+            <ion-text><h4>{{category.name}} </h4></ion-text>
+        </ion-col> 
+        <ion-col  class="unselected"  size="6">
+            <ion-text> <h4>Fish</h4> </ion-text>
+        </ion-col> 
+    </ion-row>
+ </ion-grid>
+
+<ion-grid class="productsGrid">
+    <ion-row>
+        <ion-col class="categoryBorder" size="6" *ngFor="let product of category.products; let i = index">
+                <ion-img class="catDetailsimage" style="height: 70%; width: auto;" src="{{ product.product_img }}" (click)="addEvent(product)"></ion-img>
+            <ion-col size="8">
+                <br>
+                    <ion-text style="font-weight: normal; text-align: left; height: 15%;">{{product.weight}}</ion-text>
+                <br>
+                    <ion-text style="font-weight: normal; text-align: left; height: 15%;">{{product.price}}</ion-text>
+            </ion-col>
+            <ion-col size="1" offset="5"> 
+               <ion-icon class="cartIcon" name='add-circle-outline' (click)="addToCart($event)"></ion-icon>
+            </ion-col>
+        </ion-col>
+    </ion-row>
+ </ion-grid>
+    
+</ion-content> 
+
+<ion-footer>
+
+    <ion-row>
+        <ion-col style="background-color: #FC5C5C;" size="6">
+            <ion-text >
+                <h4 class="editT">Sort by</h4>
+            </ion-text>
+        </ion-col>
+        <ion-col style="background-color: #FC5C5C;" size="6">
+            <ion-text>
+                <h4 class="editT">Filter</h4>
+            </ion-text>
+        </ion-col>
+    </ion-row>
+
+</ion-footer>

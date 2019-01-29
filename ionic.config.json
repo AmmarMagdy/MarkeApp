@@ -1,0 +1,9 @@
+{
+  "name": "MarketApp",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "e2b4a705"
+}
